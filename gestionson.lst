@@ -1,0 +1,264 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000         
+    5 00000000         ; ====================== zone de réservation de données,
+                         ======================================
+    6 00000000         ;Section RAM (read only) :
+    7 00000000                 area             mesdata,data,readonly
+    8 00000000         
+    9 00000000         
+   10 00000000         ;Section RAM (read write):
+   11 00000000                 area             maram,data,readwrite
+   12 00000000         ;export GestionSon_Index
+   13 00000000                 import           Son
+   14 00000000                 import           LongueurSon
+   15 00000000                 import           PWM_Set_Value_TIM3_Ch3
+   16 00000000         
+   17 00000000                 export           SortieSon
+   18 00000000 00001F40 
+                       GestionSon_Index
+                               dcd              8000
+   19 00000004 000002CF 
+                       Longueure_max
+                               dcd              719
+   20 00000008 00000168 
+                       SortieSon
+                               dcd              360
+   21 0000000C         
+   22 0000000C         ; ======================================================
+                       =========================================
+   23 0000000C         
+   24 0000000C         
+   25 0000000C         
+   26 0000000C         
+   27 0000000C         ;Section ROM code (read only) :  
+   28 0000000C                 area             moncode,code,readonly
+   29 00000000         ; écrire le code ici  
+   30 00000000                 export           GestionSon_callback
+   31 00000000                 export           GestionSon_Start
+   32 00000000         
+   33 00000000         GestionSon_callback
+                               proc
+   34 00000000         ; récupération de l'index courant
+   35 00000000 4912            ldr              r1, =GestionSon_Index
+   36 00000002 6808            ldr              r0, [r1]
+   37 00000004         
+   38 00000004         ; récupération de la taille du tableau
+   39 00000004 4A12            ldr              r2, =LongueurSon
+   40 00000006 6813            ldr              r3, [r2]
+   41 00000008         
+   42 00000008         ; coparaison de i et taille du tableau
+   43 00000008 4298            cmp              r0, r3
+   44 0000000A         
+   45 0000000A         ; Si plus petit = dans tableau 
+   46 0000000A DD02            ble              echelonner
+   47 0000000C         ; sinon on met à la moitié de l'intervalle [0,719]
+   48 0000000C F44F 73B4       mov              r3, #360
+   49 00000010 E00E            b                return
+   50 00000012         
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   51 00000012         echelonner
+   52 00000012         ; sauvegarder l'index 
+   53 00000012 6808            ldr              r0, [r1]
+   54 00000014         
+   55 00000014         ; remettre a l'echelle 0 à 719
+   56 00000014 4A0F            ldr              r2, =Son
+   57 00000016 F932 3010       ldrsh            r3, [r2, r0, lsl #1]
+   58 0000001A         ;sxth r3, r3
+   59 0000001A         ; (valeur son + 32768)*720 / 65536 
+   60 0000001A F503 4300       add              r3, #32768
+   61 0000001E F44F 7234       mov              r2, #720
+   62 00000022 FB03 F302       mul              r3, r2
+   63 00000026 EA4F 4323       asr              r3, r3, #16
+   64 0000002A         
+   65 0000002A         ; Post incrementation 
+   66 0000002A F100 0001       add              r0, #1
+   67 0000002E 6008            str              r0, [r1]
+   68 00000030         
+   69 00000030         return
+   70 00000030 4A09            ldr              r2, =SortieSon
+   71 00000032 6013            str              r3, [r2]
+   72 00000034         
+   73 00000034         ; stocker lr
+   74 00000034 B500            push             {lr}
+   75 00000036         
+   76 00000036         ; aller a la fonction
+   77 00000036 4618            mov              r0, r3
+   78 00000038 F7FF FFFE       bl               PWM_Set_Value_TIM3_Ch3
+   79 0000003C         
+   80 0000003C F85D EB04       pop              {lr}
+   81 00000040 4770            bx               lr
+   82 00000042         
+   83 00000042                 endp
+   84 00000042         
+   85 00000042         GestionSon_Start
+                               proc
+   86 00000042 F04F 0000       mov              r0, #0
+   87 00000046 4901            ldr              r1, =GestionSon_Index
+   88 00000048 6008            str              r0, [r1]
+   89 0000004A 4770            bx               lr
+   90 0000004C         
+   91 0000004C                 endp
+   92 0000004C         
+   93 0000004C         
+   94 0000004C         
+   95 0000004C         
+   96 0000004C                 END
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\obj\gestionson.d -o.\obj\gestionson.o -I.\RTE\_Simu -IC:\Program
+data\Keil\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -IC:\Programdata\Keil\Ar
+m\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include --predefine="__EVAL SETA 1" --p
+redefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 534" --predefi
+ne="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --predefine="_RTE_ SETA 1" 
+--list=gestionson.lst GestionSon\GestionSon.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+mesdata 00000000
+
+Symbol: mesdata
+   Definitions
+      At line 7 in file GestionSon\GestionSon.s
+   Uses
+      None
+Comment: mesdata unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+GestionSon_Index 00000000
+
+Symbol: GestionSon_Index
+   Definitions
+      At line 18 in file GestionSon\GestionSon.s
+   Uses
+      At line 35 in file GestionSon\GestionSon.s
+      At line 87 in file GestionSon\GestionSon.s
+
+Longueure_max 00000004
+
+Symbol: Longueure_max
+   Definitions
+      At line 19 in file GestionSon\GestionSon.s
+   Uses
+      None
+Comment: Longueure_max unused
+SortieSon 00000008
+
+Symbol: SortieSon
+   Definitions
+      At line 20 in file GestionSon\GestionSon.s
+   Uses
+      At line 17 in file GestionSon\GestionSon.s
+      At line 70 in file GestionSon\GestionSon.s
+
+maram 00000000
+
+Symbol: maram
+   Definitions
+      At line 11 in file GestionSon\GestionSon.s
+   Uses
+      None
+Comment: maram unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+GestionSon_Start 00000042
+
+Symbol: GestionSon_Start
+   Definitions
+      At line 85 in file GestionSon\GestionSon.s
+   Uses
+      At line 31 in file GestionSon\GestionSon.s
+Comment: GestionSon_Start used once
+GestionSon_callback 00000000
+
+Symbol: GestionSon_callback
+   Definitions
+      At line 33 in file GestionSon\GestionSon.s
+   Uses
+      At line 30 in file GestionSon\GestionSon.s
+Comment: GestionSon_callback used once
+echelonner 00000012
+
+Symbol: echelonner
+   Definitions
+      At line 51 in file GestionSon\GestionSon.s
+   Uses
+      At line 46 in file GestionSon\GestionSon.s
+Comment: echelonner used once
+moncode 00000000
+
+Symbol: moncode
+   Definitions
+      At line 28 in file GestionSon\GestionSon.s
+   Uses
+      None
+Comment: moncode unused
+return 00000030
+
+Symbol: return
+   Definitions
+      At line 69 in file GestionSon\GestionSon.s
+   Uses
+      At line 49 in file GestionSon\GestionSon.s
+Comment: return used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+LongueurSon 00000000
+
+Symbol: LongueurSon
+   Definitions
+      At line 14 in file GestionSon\GestionSon.s
+   Uses
+      At line 39 in file GestionSon\GestionSon.s
+Comment: LongueurSon used once
+PWM_Set_Value_TIM3_Ch3 00000000
+
+Symbol: PWM_Set_Value_TIM3_Ch3
+   Definitions
+      At line 15 in file GestionSon\GestionSon.s
+   Uses
+      At line 78 in file GestionSon\GestionSon.s
+Comment: PWM_Set_Value_TIM3_Ch3 used once
+Son 00000000
+
+Symbol: Son
+   Definitions
+      At line 13 in file GestionSon\GestionSon.s
+   Uses
+      At line 56 in file GestionSon\GestionSon.s
+Comment: Son used once
+3 symbols
+350 symbols in table
