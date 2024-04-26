@@ -1,21 +1,19 @@
 #include "DFT.h"
 
-float power(float num){
-	return num*num;
-}
-
-float DFT(float * Signal, int k){
+long long DFT(short * Signal, int k){
 	
-	float Im = 0, Re = 0;
+	long long Im = 0, Re = 0;
 	int M = 64;
 	int index;
 	for (int i=0; i<M; i++){
 			index = (k*i) % 64;
-		
-			Im += Signal[i]*(TabCos[index])
+			
+		// Im et Re en format 5,27 car Signal 4,12 et Tab 1,15 
+			Im += Signal[i]*(TabCos[index]);
 			Re += Signal[i]*(TabSin[index]);
 	}
-	return power(Im) + power(Re);
+	// return format 10,54
+	return (Im*Im) + (Re*Re);
 }
 
 

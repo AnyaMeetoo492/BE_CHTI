@@ -458,11 +458,6 @@
               <FileType>5</FileType>
               <FilePath>.\DFT.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>ServiceDFTFrac</GroupName>
-          <Files>
             <File>
               <FileName>CosSin_Fract_1_15.asm</FileName>
               <FileType>2</FileType>
@@ -1001,11 +996,6 @@
               <FileType>5</FileType>
               <FilePath>.\DFT.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>ServiceDFTFrac</GroupName>
-          <Files>
             <File>
               <FileName>CosSin_Fract_1_15.asm</FileName>
               <FileType>2</FileType>

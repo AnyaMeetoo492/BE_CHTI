@@ -27,33 +27,28 @@ Project File Date:  04/26/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Simu'
-assembling GestionSon.s...
 assembling startup-rvds.s...
-compiling CosSin_float.c...
+assembling GestionSon.s...
 compiling Signal_float.c...
-..\Service_DFT_float\Service_DFT_float\Signal_float.c(5): error:  #169: expected a declaration
-..\Service_DFT_float\Service_DFT_float\Signal_float.c(68): warning:  #12-D: parsing restarts here after previous syntax error
-  -1.0};
-..\Service_DFT_float\Service_DFT_float\Signal_float.c: 1 warning, 1 error
+compiling CosSin_float.c...
 assembling bruitverre.asm...
 assembling CosSin_Fract_1_15.asm...
+assembling Signal_4_12.asm...
 compiling DFT.c...
 DFT.h(6): warning:  #1-D: last line of file ends without a newline
-  float DFT(float * Signal, int k);
-DFT.c(16): error:  #65: expected a ";"
-  			Re += Signal[i]*(TabSin[index]);
-DFT.c: 1 warning, 1 error
-assembling Signal_4_12.asm...
+  long long DFT(short * Signal, int k);
+DFT.c: 1 warning, 0 errors
 compiling principal.c...
 Principal\principal.c(9): warning:  #1295-D: Deprecated declaration GestionSon_Start - give arg types
   extern void GestionSon_Start();
 Principal\principal.c(17): warning:  #550-D: variable "DFT_result"  was set but never used
-  	float DFT_result[64];
-Principal\principal.c(18): warning:  #550-D: variable "signal"  was set but never used
-  	float signal[64];
-Principal\principal.c: 3 warnings, 0 errors
+  	long long DFT_result[64];
+Principal\principal.c: 2 warnings, 0 errors
 compiling ServiceJeuLaser.c...
-".\Obj\GestionSon.axf" - 2 Error(s), 5 Warning(s).
+linking...
+Program Size: Code=1764 RO-data=652 RW-data=164 ZI-data=1028  
+FromELF: creating hex file...
+".\Obj\GestionSon.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -76,7 +71,6 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
-Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

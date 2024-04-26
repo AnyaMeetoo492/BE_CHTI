@@ -369,7 +369,7 @@
           <Type>0</Type>
           <LineNumber>40</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134220792</Address>
+          <Address>134220320</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -385,7 +385,7 @@
           <Type>0</Type>
           <LineNumber>37</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134220772</Address>
+          <Address>134220292</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -624,7 +624,7 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>10</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\DFT.c</PathWithFileName>
@@ -644,16 +644,8 @@
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
-  </Group>
-
-  <Group>
-    <GroupName>ServiceDFTFrac</GroupName>
-    <tvExp>1</tvExp>
-    <tvExpOptDlg>0</tvExpOptDlg>
-    <cbSel>0</cbSel>
-    <RteFlg>0</RteFlg>
     <File>
-      <GroupNumber>6</GroupNumber>
+      <GroupNumber>5</GroupNumber>
       <FileNumber>12</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>
@@ -665,7 +657,7 @@
       <bShared>0</bShared>
     </File>
     <File>
-      <GroupNumber>6</GroupNumber>
+      <GroupNumber>5</GroupNumber>
       <FileNumber>13</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>

@@ -1,6 +1,6 @@
 
-extern float TabCos[64];
-extern float TabSin[64];
-extern float LeSignal[64];
+extern short TabCos[64];
+extern short TabSin[64];
+extern short LeSignal[64];
 
-float DFT(float * Signal, int k);
+long long DFT(short * Signal, int k);
