@@ -5,8 +5,6 @@
 ".\Driver\DriverJeuLaser.lib"
 ".\obj\servicejeulaser.o"
 ".\obj\startup-rvds.o"
-".\obj\cossin_float.o"
-".\obj\signal_float.o"
 ".\obj\dft.o"
 ".\obj\cossin_fract_1_15.o"
 ".\obj\signal_4_12.o"

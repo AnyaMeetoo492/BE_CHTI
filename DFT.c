@@ -8,9 +8,9 @@ long long DFT(short * Signal, int k){
 	for (int i=0; i<M; i++){
 			index = (k*i) % 64;
 			
-		// Im et Re en format 5,27 car Signal 4,12 et Tab 1,15 
-			Im += Signal[i]*(TabCos[index]);
-			Re += Signal[i]*(TabSin[index]);
+		// Im et Re en format 5,27 car Signal 4,12 et Tab 1,15		
+			Im += (int)Signal[i]*(int)TabCos[index];
+			Re += (int)Signal[i]*(int)TabSin[index];
 	}
 	// return format 10,54
 	return (Im*Im) + (Re*Re);

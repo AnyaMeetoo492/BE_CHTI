@@ -228,30 +228,30 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
@@ -261,8 +261,6 @@ Image Symbol Table
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
     ../fplib/microlib/fpscalb.c              0x00000000   Number         0  fscalb.o ABSOLUTE
-    ..\Service_DFT_float\Service_DFT_float\CosSin_float.c 0x00000000   Number         0  cossin_float.o ABSOLUTE
-    ..\Service_DFT_float\Service_DFT_float\Signal_float.c 0x00000000   Number         0  signal_float.o ABSOLUTE
     DFT.c                                    0x00000000   Number         0  dft.o ABSOLUTE
     Driver\ServiceJeuLaser.c                 0x00000000   Number         0  servicejeulaser.o ABSOLUTE
     Driver\\ServiceJeuLaser.c                0x00000000   Number         0  servicejeulaser.o ABSOLUTE
@@ -474,43 +472,43 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000ec   Data   RO          124    RESET               startup-rvds.o
-    0x080000ec   0x080000ec   0x00000000   Code   RO          276  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080000ec   0x080000ec   0x00000004   Code   RO          303    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080000f0   0x080000f0   0x00000004   Code   RO          306    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO          308    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO          310    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080000f4   0x080000f4   0x00000008   Code   RO          311    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080000fc   0x080000fc   0x00000004   Code   RO          318    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x08000100   0x08000100   0x00000000   Code   RO          313    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x08000100   0x08000100   0x00000000   Code   RO          315    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x08000100   0x08000100   0x00000004   Code   RO          304    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080000ec   0x080000ec   0x00000000   Code   RO          272  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080000ec   0x080000ec   0x00000004   Code   RO          299    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080000f0   0x080000f0   0x00000004   Code   RO          302    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO          304    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO          306    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080000f4   0x080000f4   0x00000008   Code   RO          307    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080000fc   0x080000fc   0x00000004   Code   RO          314    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x08000100   0x08000100   0x00000000   Code   RO          309    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x08000100   0x08000100   0x00000000   Code   RO          311    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x08000100   0x08000100   0x00000004   Code   RO          300    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000104   0x08000104   0x0000004c   Code   RO          125    .text               startup-rvds.o
-    0x08000150   0x08000150   0x00000024   Code   RO          328    .text               mc_w.l(init.o)
-    0x08000174   0x08000174   0x00000074   Code   RO          185    i.CLOCK_Configure   DriverJeuLaser.lib(clock.o)
-    0x080001e8   0x080001e8   0x00000074   Code   RO          191    i.CLOCK_HPRECompute  DriverJeuLaser.lib(clock.o)
-    0x0800025c   0x0800025c   0x00000090   Code   RO          135    i.DFT               dft.o
-    0x080002ec   0x080002ec   0x0000000c   Code   RO          264    i.SysTick_Handler   DriverJeuLaser.lib(timer_systick.o)
-    0x080002f8   0x080002f8   0x0000010c   Code   RO          233    i.TIM1_CC_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
-    0x08000404   0x08000404   0x00000018   Code   RO          234    i.TIM1_UP_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
-    0x0800041c   0x0800041c   0x00000110   Code   RO          235    i.TIM2_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
-    0x0800052c   0x0800052c   0x0000012c   Code   RO          236    i.TIM3_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
-    0x08000658   0x08000658   0x0000012c   Code   RO          237    i.TIM4_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
-    0x08000784   0x08000784   0x0000000e   Code   RO          334    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08000792   0x08000792   0x00000002   Code   RO          335    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08000794   0x08000794   0x0000000e   Code   RO          336    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08000150   0x08000150   0x00000024   Code   RO          324    .text               mc_w.l(init.o)
+    0x08000174   0x08000174   0x00000074   Code   RO          181    i.CLOCK_Configure   DriverJeuLaser.lib(clock.o)
+    0x080001e8   0x080001e8   0x00000074   Code   RO          187    i.CLOCK_HPRECompute  DriverJeuLaser.lib(clock.o)
+    0x0800025c   0x0800025c   0x00000090   Code   RO          129    i.DFT               dft.o
+    0x080002ec   0x080002ec   0x0000000c   Code   RO          260    i.SysTick_Handler   DriverJeuLaser.lib(timer_systick.o)
+    0x080002f8   0x080002f8   0x0000010c   Code   RO          229    i.TIM1_CC_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
+    0x08000404   0x08000404   0x00000018   Code   RO          230    i.TIM1_UP_IRQHandler  DriverJeuLaser.lib(timer_1234.o)
+    0x0800041c   0x0800041c   0x00000110   Code   RO          231    i.TIM2_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
+    0x0800052c   0x0800052c   0x0000012c   Code   RO          232    i.TIM3_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
+    0x08000658   0x08000658   0x0000012c   Code   RO          233    i.TIM4_IRQHandler   DriverJeuLaser.lib(timer_1234.o)
+    0x08000784   0x08000784   0x0000000e   Code   RO          330    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08000792   0x08000792   0x00000002   Code   RO          331    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000794   0x08000794   0x0000000e   Code   RO          332    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x080007a2   0x080007a2   0x00000002   PAD
     0x080007a4   0x080007a4   0x0000002c   Code   RO            4    i.main              principal.o
-    0x080007d0   0x080007d0   0x00000020   Data   RO          332    Region$$Table       anon$$obj.o
-    0x080007f0   0x080007f0   0x00000080   Data   RO          150    Signal              signal_4_12.o
-    0x08000870   0x08000870   0x00000100   Data   RO          149    Trigo               cossin_fract_1_15.o
+    0x080007d0   0x080007d0   0x00000020   Data   RO          328    Region$$Table       anon$$obj.o
+    0x080007f0   0x080007f0   0x00000080   Data   RO          146    Signal              signal_4_12.o
+    0x08000870   0x08000870   0x00000100   Data   RO          145    Trigo               cossin_fract_1_15.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000970, Size: 0x000004a8, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08000970   0x000000a0   Data   RW          241    .data               DriverJeuLaser.lib(timer_1234.o)
-    0x200000a0   0x08000a10   0x00000004   Data   RW          268    .data               DriverJeuLaser.lib(timer_systick.o)
+    0x20000000   0x08000970   0x000000a0   Data   RW          237    .data               DriverJeuLaser.lib(timer_1234.o)
+    0x200000a0   0x08000a10   0x00000004   Data   RW          264    .data               DriverJeuLaser.lib(timer_systick.o)
     0x200000a4   0x08000a14   0x00000004   PAD
     0x200000a8        -       0x00000400   Zero   RW          122    STACK               startup-rvds.o
 
