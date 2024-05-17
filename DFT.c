@@ -1,6 +1,6 @@
 #include "DFT.h"
 
-long long DFT(short * Signal, int k){
+int DFT(short * Signal, int k){
 	
 	long long Im = 0, Re = 0;
 	int M = 64;
@@ -13,7 +13,7 @@ long long DFT(short * Signal, int k){
 			Re += (int)Signal[i]*(int)TabSin[index];
 	}
 	// return format 10,54
-	return (Im*Im) + (Re*Re);
+	return ((Im*Im) + (Re*Re)) >> 32;
 }
 
 

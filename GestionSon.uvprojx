@@ -461,6 +461,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Affichage_Valise</GroupName>
+          <Files>
+            <File>
+              <FileName>Affichage_Valise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ModuleAffichage\Affichage_Valise.h</FilePath>
+            </File>
+            <File>
+              <FileName>affichage_valise.o</FileName>
+              <FileType>3</FileType>
+              <FilePath>..\ModuleAffichage\affichage_valise.o</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -841,7 +856,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -985,6 +1000,21 @@
               <FileName>Signal_4_12.asm</FileName>
               <FileType>2</FileType>
               <FilePath>.\Service_DFT_Fract\Signal_4_12.asm</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Affichage_Valise</GroupName>
+          <Files>
+            <File>
+              <FileName>Affichage_Valise.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ModuleAffichage\Affichage_Valise.h</FilePath>
+            </File>
+            <File>
+              <FileName>affichage_valise.o</FileName>
+              <FileType>3</FileType>
+              <FilePath>..\ModuleAffichage\affichage_valise.o</FilePath>
             </File>
           </Files>
         </Group>
